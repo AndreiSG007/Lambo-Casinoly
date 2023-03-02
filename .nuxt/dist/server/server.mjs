@@ -1,0 +1,1 @@
+export { default } from "file:///Users/andreisoftgenius/Documents/lambo-promo-Casinoly/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
