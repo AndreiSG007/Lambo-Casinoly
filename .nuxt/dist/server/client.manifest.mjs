@@ -1,1 +1,1 @@
-export { default } from "file:///Users/andreisoftgenius/Documents/lambo-promo-Casinoly/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"
+export { default } from "file:///Users/andreisoftgenius/Documents/LAMBO/lambo-promo-Casinoly/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"
