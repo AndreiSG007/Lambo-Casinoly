@@ -61,7 +61,7 @@
       </a>
       <div>
         <img
-          src="/assets/Header_group_Casinoly.png"
+          src="/assets/header_group_Casinoly.png"
           format="webp"
           alt=""
           class="main-image"
