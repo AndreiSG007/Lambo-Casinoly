@@ -208,15 +208,15 @@ export default defineComponent({
     const newYear = new Date("April 5, 2023 15:37:25").getTime();
     const imgs = [
       "/mateadmin/casinoly/assets/poze/a0.jpg",
-      "/mateadmin/casinoly/poze/a1.jpg",
-      "/mateadmin/casinoly/poze/a2.jpg",
-      "/mateadmin/casinoly/poze/a3.jpg",
-      "/mateadmin/casinoly/poze/a4.jpg",
-      "/mateadmin/casinoly/poze/a5.jpg",
-      "/mateadmin/casinoly/poze/a6.jpg",
-      "/mateadmin/casinoly/poze/a7.jpg",
-      "/mateadmin/casinoly/poze/a8.jpg",
-      "/mateadmin/casinoly/poze/a9.jpg",
+      "/mateadmin/casinoly/assets/poze/a1.jpg",
+      "/mateadmin/casinoly/assets/poze/a2.jpg",
+      "/mateadmin/casinoly/assets/poze/a3.jpg",
+      "/mateadmin/casinoly/assets/poze/a4.jpg",
+      "/mateadmin/casinoly/assets/poze/a5.jpg",
+      "/mateadmin/casinoly/assets/poze/a6.jpg",
+      "/mateadmin/casinoly/assets/poze/a7.jpg",
+      "/mateadmin/casinoly/assets/poze/a8.jpg",
+      "/mateadmin/casinoly/assets/poze/a9.jpg",
     ];
     const showImg = (index) => {
       indexRef.value = index;
