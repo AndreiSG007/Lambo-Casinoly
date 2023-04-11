@@ -56,9 +56,9 @@
           </vue-countdown>
         </no-ssr>
       </div>
-      <a target="_blank" href="https://www.casinoly.com">
+      <div @click="casinoRedirect">
         <button class="main-button">{{ $t("playNow") }}</button>
-      </a>
+      </div>
       <div>
         <img
           src="/assets/header_group_Casinoly.png"
@@ -234,6 +234,14 @@ export default defineComponent({
     };
     const onHide = () => (visibleRef.value = false);
 
+    const casinoRedirect = () => {
+      let url = 'https://casinoly.com';
+      if (route.query.btag) {
+        url += `?btag=${route.query.btag}`;
+      }
+      window.open(url, '_blank');
+    };
+
     return {
       visibleRef,
       indexRef,
@@ -249,6 +257,7 @@ export default defineComponent({
       setControlledSwiper,
       openModal,
       closeModal,
+      casinoRedirect,
     };
   },
 });
