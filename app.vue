@@ -234,12 +234,13 @@ export default defineComponent({
     };
     const onHide = () => (visibleRef.value = false);
 
+    const route = useRoute();
     const casinoRedirect = () => {
-      let url = 'https://casinoly.com';
+      let url = "https://casinoly.com/en";
       if (route.query.btag) {
         url += `?btag=${route.query.btag}`;
       }
-      window.open(url, '_blank');
+      window.open(url, "_blank");
     };
 
     return {
