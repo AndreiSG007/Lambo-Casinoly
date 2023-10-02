@@ -32,27 +32,7 @@
         </div>
       </div>
 
-      <div class="participants">
-          <h2> Remaining 10 players</h2>
-          <table>
-            <tr>
-              <td>
-                <ul>
-                  <li v-for="player in players1" :key="player">
-                    {{ player }}
-                  </li>
-                </ul>
-              </td>
-              <td>
-                <ul>
-                  <li v-for="player in players2" :key="player">
-                    {{ player }}
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </table>
-        </div>
+      <Players />
 
       <div class="bottom-gallery">
         <h2 class="bottom-gallery-text">{{ $t("thePrizeInAction") }}</h2>        
@@ -138,12 +118,6 @@ export default defineComponent({
     const showModal = ref(false);
     const mySwiper = ref();
 
-    const players = ["j@pov.com", "hen@hki.com", "sma@tigra.com", "nat@hafae.com"];
-    const half = Math.floor(players.length / 2);
-
-    const players1 = ref(players.slice(0, half));
-    const players2 = ref(players.slice(half, players.length));
-
     const breakpoints = {
       600: {
         slidesPerView: 3,
@@ -198,8 +172,6 @@ export default defineComponent({
       visibleRef,
       indexRef,
       imgs,
-      players1,
-      players2,
       showImg,
       onHide,
       showModal,
