@@ -1,13 +1,7 @@
 <template>
   <div class="main-container">
     <div class="main-wrapper">
-      <img
-        src="/assets/Logo_Casinoly.svg"
-        alt=""
-        class="main-logo"
-        w="190"
-        h="36"
-      />
+      <img src="/assets/Logo_Casinoly.svg" alt="" class="main-logo" w="190" h="36" />
       <div class="main-texts">
         <h2>{{ $t("lastManStanding") }}</h2>
         <h1>{{ $t("lamborghiniHuracan") }}</h1>
@@ -17,12 +11,7 @@
         <button class="main-button">{{ $t("playNow") }}</button>
       </div>
       <div>
-        <img
-          src="/assets/header_group_Casinoly.png"
-          format="webp"
-          alt=""
-          class="main-image"
-        />
+        <img src="/assets/header_group_Casinoly.png" format="webp" alt="" class="main-image" />
       </div>
 
       <div class="steps">
@@ -43,32 +32,39 @@
         </div>
       </div>
 
+      <div class="participants">
+          <h2> Remaining 10 players</h2>
+          <table>
+            <tr>
+              <td>
+                <ul>
+                  <li v-for="player in players1" :key="player">
+                    {{ player }}
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li v-for="player in players2" :key="player">
+                    {{ player }}
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+
       <div class="bottom-gallery">
-        <h2 class="bottom-gallery-text">{{ $t("thePrizeInAction") }}</h2>
-        <iframe
-          src="https://www.youtube.com/embed/u8Oqaxf4r94"
-          title="YouTube video player"
-          frameborder="0"
+        <h2 class="bottom-gallery-text">{{ $t("thePrizeInAction") }}</h2>        
+        <iframe src="https://www.youtube.com/embed/u8Oqaxf4r94" title="YouTube video player" frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
+          allowfullscreen></iframe>
 
         <div class="swiper-container">
-          <swiper
-            :slidesPerView="2"
-            :space-between="20"
-            class="gallery-swiper"
-            navigation
-            :breakpoints="breakpoints"
-            :modules="[Controller]"
-            @swiper="setControlledSwiper"
-          >
-            <swiper-slide
-              v-for="(src, index) in imgs"
-              :key="index"
-              class="pic swiper-container-1"
-              @click="() => showImg(index)"
-            >
+          <swiper :slidesPerView="2" :space-between="20" class="gallery-swiper" navigation :breakpoints="breakpoints"
+            :modules="[Controller]" @swiper="setControlledSwiper">
+            <swiper-slide v-for="(src, index) in imgs" :key="index" class="pic swiper-container-1"
+              @click="() => showImg(index)">
               <img :src="src" format="webp" />
             </swiper-slide>
           </swiper>
@@ -81,12 +77,7 @@
             </button>
           </div>
         </div>
-        <vue-easy-lightbox
-          :visible="visibleRef"
-          :imgs="imgs"
-          :index="indexRef"
-          @hide="onHide"
-        ></vue-easy-lightbox>
+        <vue-easy-lightbox :visible="visibleRef" :imgs="imgs" :index="indexRef" @hide="onHide"></vue-easy-lightbox>
 
         <div class="modal-overlay" v-show="showModal">
           <div class="modal">
@@ -147,6 +138,12 @@ export default defineComponent({
     const showModal = ref(false);
     const mySwiper = ref();
 
+    const players = ["j@pov.com", "hen@hki.com", "sma@tigra.com", "nat@hafae.com"];
+    const half = Math.floor(players.length / 2);
+
+    const players1 = ref(players.slice(0, half));
+    const players2 = ref(players.slice(half, players.length));
+
     const breakpoints = {
       600: {
         slidesPerView: 3,
@@ -201,6 +198,8 @@ export default defineComponent({
       visibleRef,
       indexRef,
       imgs,
+      players1,
+      players2,
       showImg,
       onHide,
       showModal,
